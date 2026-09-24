@@ -1,10 +1,10 @@
 # Assumptions and testing thoughts
 
 ### Unsorted lists
-Sort prior
+Sort in summarizeCollection dont error
 
 ### Duplicates
-Ignore duplicates don't error
+Ignore duplicates don't error. Done in summarizeCollection
 
 ### Negatives
 Reject negatives. Ambigious -3--1 input output
