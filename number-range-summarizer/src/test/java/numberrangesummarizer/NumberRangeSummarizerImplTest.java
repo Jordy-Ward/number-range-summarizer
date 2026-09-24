@@ -22,12 +22,12 @@ class NumberRangeSummarizerImplTest {
 
     @Test
     void summarizeSortsUnsortedInput() {
-        assertEquals("1-4, 10", summarizer.summarizeCollection(Arrays.asList(3,1,10,2,4)));
+        assertEquals("1-4, 10", summarizer.summarizeCollection(Arrays.asList(3, 1, 10, 2, 4)));
     }
 
     @Test
     void summarizeIgnoresDuplicates() {
-        assertEquals("1-2, 4, 6-7", summarizer.summarizeCollection(Arrays.asList(1,1,2,4,6,7,7)));
+        assertEquals("1-2, 4, 6-7", summarizer.summarizeCollection(Arrays.asList(1, 1, 2, 4, 6, 7, 7)));
     }
 
     @Test
