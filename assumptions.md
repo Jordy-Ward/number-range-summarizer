@@ -7,11 +7,14 @@ Sort prior
 Ignore duplicates don't error
 
 ### Negatives
-Reject negatives. Adds complicated edge cases
+Reject negatives. Ambigious -3--1 input output
 
 ### Invalid tokens
 Throw error expect integers
 
 ### Null / emtpy input
-Empty result. Empty in equals empty out
+Empty result. Empty in equals empty out for both interface methods
+
+### Whitespace in input
+Trim
 
