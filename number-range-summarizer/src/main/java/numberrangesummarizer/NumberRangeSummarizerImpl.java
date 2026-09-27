@@ -17,16 +17,37 @@ public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
         }
 
         return Arrays.stream(input.split(","))
-                .map(n -> n.trim())
-                .filter(n -> !n.isEmpty())
-                .map(n -> parseNonNegative(n))
-                .collect(Collectors.toList()); //take elements from stream and put them into a list of integers
+                .map(n -> n.trim()) //Assump 7
+                .filter(n -> !n.isEmpty()) //Assump 6
+                .map(n -> parseNonNegative(n)) //Assump 4
+                .collect(Collectors.toList());
     }
 
     @Override
     public String summarizeCollection(Collection<Integer> input) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'summarizeCollection'");
+    }
+
+    private List<Range> groupIntoRanges(List<Integer> sorted) {
+        ArrayList<Range> ranges = new ArrayList<>();
+        int start = sorted.get(0);
+        int end = start;
+        int current;
+
+        for (int i = 1; i < sorted.size(); i ++) {
+            current = sorted.get(i);
+
+            if (current == end + 1) { //within range
+                end = current;
+            } else { //range for start var has ended. add
+                ranges.add(new Range(start, end));
+                start = current;
+                end = current;
+            }
+        }
+        ranges.add(new Range(start, end));
+        return ranges;
     }
 
     private Integer parseNonNegative(String v) {
