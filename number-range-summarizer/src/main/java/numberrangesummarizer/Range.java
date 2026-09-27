@@ -1,7 +1,7 @@
 package numberrangesummarizer;
 
 /**
- * Represents a group of numbers, of ranges.
+ * Represents a group of numbers/ranges
  */
 final class Range {
     private final int start;

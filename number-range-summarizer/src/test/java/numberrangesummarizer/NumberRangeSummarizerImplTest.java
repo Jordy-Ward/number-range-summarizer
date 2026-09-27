@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 
 class NumberRangeSummarizerImplTest {
     
-    //hold the summarizer as the interface type
     private final NumberRangeSummarizer summarizer = new NumberRangeSummarizerImpl();
     
     @Test
