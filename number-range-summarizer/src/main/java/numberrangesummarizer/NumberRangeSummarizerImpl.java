@@ -10,13 +10,16 @@ import java.util.ArrayList;
 
 public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 
+    private static final String INPUT_DELIMITER = ",";
+    private static final String OUTPUT_DELIMITER = ", ";
+
     @Override
     public Collection<Integer> collect(String input) {
         if (input == null) {
             return Collections.emptyList();
         }
 
-        return Arrays.stream(input.split(","))
+        return Arrays.stream(input.split((INPUT_DELIMITER)))
                 .map(n -> n.trim()) //Assump 7
                 .filter(n -> !n.isEmpty()) //Assump 6
                 .map(n -> parseNonNegative(n)) //Assump 4
@@ -25,8 +28,18 @@ public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 
     @Override
     public String summarizeCollection(Collection<Integer> input) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'summarizeCollection'");
+        if (input == null || input.isEmpty()) {
+            return "";
+        }
+
+        List<Integer> sorted = input.stream()
+                .distinct()
+                .sorted()
+                .collect(Collectors.toList());
+
+        return groupIntoRanges(sorted).stream()
+                .map(r -> r.toString())
+                .collect(Collectors.joining(OUTPUT_DELIMITER));
     }
 
     private List<Range> groupIntoRanges(List<Integer> sorted) {
