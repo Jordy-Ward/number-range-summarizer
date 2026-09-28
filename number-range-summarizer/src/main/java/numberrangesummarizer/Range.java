@@ -12,10 +12,10 @@ final class Range {
         this.end = end;
     }
 
-    /**  
+    /**
      *  Return the range as "start-end", or a single number when the start equals the end
      */
-    @Override 
+    @Override
     public String toString() {
         return start == end ? String.valueOf(start) : start + "-" + end;
     }

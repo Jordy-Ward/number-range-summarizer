@@ -37,6 +37,7 @@ class NumberRangeSummarizerImplTest {
     @Test
     void rejectsInvalidTokens() {
         assertThrows(IllegalArgumentException.class, () -> summarizer.collect("1, a, 3, 5"));
+        assertThrows(IllegalArgumentException.class, () -> summarizer.collect("1, 4.5, 6"));
     }
 
     @Test
