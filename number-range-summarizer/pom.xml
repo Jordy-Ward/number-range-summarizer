@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!--Project uses java 17, has JUnit tests and uses sunfire to run them during maven test-->
+    <!--Project uses java 17, has JUnit tests and uses surefire to run them during maven test-->
 
     <groupId>com.jordy</groupId>
     <artifactId>number-range-summarizer</artifactId>
@@ -25,12 +25,12 @@
         </dependency>
     </dependencies>
 
-    <!--sunfire maven plugin to actually run the tests during maven test-->
+    <!--surefire maven plugin to actually run the tests during maven test-->
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-sunfire-plugin</artifactId>
+                <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.3</version>
             </plugin>
         </plugins>
