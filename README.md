@@ -37,7 +37,7 @@ There is only one input format, so parsing and summarizing is kept to one class.
 
 ## Streams and functional ideas
 
-Java 8 streams bring ideas from functional languages such as Haskell into Java. `collect` reads almost like the Haskell equivalent:
+I took Functional Programming in Haskell during my honours year, and I noticed Java 8's Streams update borrows similar ideas. `collect` reads almost like the Haskell equivalent:
 
 ```java
 Arrays.stream(input.split(","))
